@@ -1,5 +1,6 @@
 # ALPACA-TRADING-BOT
-This a trading bot based on Alpaca API.
+This a trading bot based on Alpaca API. This is an simple trading strategy that buys stocks when fast moving average excceeds slow moving average, and liquidate position when fast moving average goes below slow moving average. Make sure you add your own indicators and signals.
+
 Use the package manager pip to install.
 ## Installation
 ```bash
@@ -39,13 +40,11 @@ freq = '1Min'
 ## Data frame structure.
 
 
-
 ```python
 import 
 
 foobar.pluralize('word') # returns 'words'
 foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
 ```
 
 ## Contributing
