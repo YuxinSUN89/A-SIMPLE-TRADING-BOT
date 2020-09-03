@@ -4,12 +4,12 @@ This a trading bot based on Alpaca API. This is an simple trading strategy that 
 Use the package manager pip to install.
 ## Installation
 ```bash
-pip -r requirements
+pip install -r requirements.txt
 ```
 
 ## Usage
 To get data from the API, simply import the library and call the object with your API key. Your API key may also be stored in the environment variable in config file.
-```bash
+```python
 API_KEY = "<Your API here>"
 SECRET_KEY = "<Your secret key here>"
 
@@ -18,11 +18,11 @@ api = tradeapi.REST(API_KEY,
                     'https://paper-api.alpaca.markets')
 ```
 Also you can list the stocks you want to trade in 
-```bash
+```python
 symbols = ['AA', 'AAL', 'UAL', 'NIO', 'AMD', 'NCLH', 'BYND', 'DAL', 'ATVI', 'WORK', 'VIRT', 'AAPL', 'AMC', 'TSLA']
 ```
 and number of shares you want to purchase each time (buy more shares for small-cap stock and less shares for large-cap stocks)
-```bash
+```python
 loading = {
     'AA': 100,
     'AAL': 100,
@@ -31,7 +31,7 @@ loading = {
     'TSLA': 40}
 ```
 Last, set the slow and fast moving average and time frequency data for your dataframe.
-```bash
+```python
 slow = 20
 fast = 1
 freq = '1Min'
