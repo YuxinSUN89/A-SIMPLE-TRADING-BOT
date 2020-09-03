@@ -25,16 +25,7 @@ and number of shares you want to purchase each time (buy more shares for small-c
 loading = {
     'AA': 100,
     'AAL': 100,
-    'UAL': 100,
-    'NIO': 100,
-    'AMD': 100,
-    'NCLH': 100,
-    'BYND': 100,
-    'DAL': 100,
-    'ATVI': 100,
-    'WORK': 100,
-    'VIRT': 100,
-    'AAPL': 10,
+    ... 
     'AMC': 200,
     'TSLA': 40}
 ```
