@@ -65,6 +65,6 @@ if __name__ == '__main__':
 
     #------ GET TRADING SIGNALS -----#
     trading_signal = stock_data.get_signals()
-    print(trading_signal)
+    print(dataframe)
 
 
