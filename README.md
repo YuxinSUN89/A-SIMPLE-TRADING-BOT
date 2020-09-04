@@ -46,6 +46,9 @@ import
 foobar.pluralize('word') # returns 'words'
 foobar.pluralize('goose') # returns 'geese'
 ```
+Would result on:
+
+![alt text](images/dataframe.png)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
