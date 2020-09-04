@@ -37,18 +37,32 @@ fast = 1
 freq = '1Min'
 ```
 
-## Data frame structure.
+## Data frame structure
 
-
-```python
-import 
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-```
 Would result on:
-
 ![](images/dataframe.png)
+
+And signal 
+```python
+loading = {
+    'AA': 100,
+    'AAL': 0,
+    ... 
+    'AMC': 0,
+    'TSLA': -40}
+```
+This signal suggests to buy 100 shares of AA and liquidate 40 shares of TSLA.
+Again, make sure to add you own indicators in dataframe. 
+
+## Start trading
+
+Go to TradingBot.py and run it. 
+Each transaction will be logged like:
+![](images/log.png)
+
+## House keeping
+This algo uses New York local time. You might need to adjust daylight saving time based on your location.
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
