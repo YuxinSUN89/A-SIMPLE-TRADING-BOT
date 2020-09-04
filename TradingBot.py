@@ -1,12 +1,9 @@
-
 import time
 import datetime
 import pandas as pd
 import Yuxin_config
 from StockInfo import *
 from get_data import *
-
-
 
 def time_to_open(current_time):
     if current_time.weekday() <= 4:
