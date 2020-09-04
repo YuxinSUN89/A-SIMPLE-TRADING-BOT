@@ -1,7 +1,6 @@
 #------ IMPORT LIBRARY and CONFIG -------#
-import alpaca_trade_api as tradeapi
+
 import Yuxin_config
-import config
 import pandas as pd
 pd.options.display.max_rows = 999
 pd.set_option('display.max_columns', None)

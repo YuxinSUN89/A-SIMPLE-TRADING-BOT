@@ -3,10 +3,9 @@ API_KEY = "<Your API here>"
 SECRET_KEY = "<Your secret key here>"
 
 #---------------- API INFO ----------------#
-api = tradeapi.REST(Yuxin_config.API_KEY,
-                    Yuxin_config.SECRET_KEY,
+api = tradeapi.REST(API_KEY,
+                    SECRET_KEY,
                     'https://paper-api.alpaca.markets')
-
 
 #-------- Here basket of stocks ------------#
 symbols = ['AA', 'AAL', 'UAL', 'NIO', 'AMD', 'NCLH', 'BYND', 'DAL', 'ATVI', 'WORK', 'VIRT', 'AAPL', 'AMC', 'TSLA']
