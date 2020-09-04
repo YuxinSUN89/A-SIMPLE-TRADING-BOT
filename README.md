@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-To get data from the API, simply import the library and call the object with your API key. Your API key may also be stored in the environment variable in config file.
+Go to config file and input your Alpac API key and secret key
 ```python
 API_KEY = "<Your API here>"
 SECRET_KEY = "<Your secret key here>"
@@ -17,11 +17,11 @@ api = tradeapi.REST(API_KEY,
                     SECRET_KEY,
                     'https://paper-api.alpaca.markets')
 ```
-Also you can list the stocks you want to trade in 
+Then, list the stocks you want to trade in 
 ```python
 symbols = ['AA', 'AAL', 'UAL', 'NIO', 'AMD', 'NCLH', 'BYND', 'DAL', 'ATVI', 'WORK', 'VIRT', 'AAPL', 'AMC', 'TSLA']
 ```
-and number of shares you want to purchase each time (buy more shares for small-cap stock and less shares for large-cap stocks)
+and number of shares you want to purchase each time (the example here is to buy more shares for small-cap stock and less shares for large-cap stocks)
 ```python
 loading = {
     'AA': 100,
@@ -38,8 +38,7 @@ freq = '1Min'
 ```
 
 ## Data frame structure
-
-Would result on:
+In StockInfo class, dataframe will be created such as :
 ![](images/dataframe.png)
 
 And signal 
@@ -52,17 +51,16 @@ loading = {
     'TSLA': -40}
 ```
 This signal suggests to buy 100 shares of AA and liquidate 40 shares of TSLA.
-Again, make sure to add you own indicators in dataframe. 
+**Again, make sure to add you own indicators in dataframe. **
 
 ## Start trading
 
-Go to TradingBot.py and run it. 
+Go to **TradingBot.py** and run it. 
 Each transaction will be logged like:
 ![](images/log.png)
 
 ## House keeping
 This algo uses New York local time. You might need to adjust daylight saving time based on your location.
-
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
