@@ -8,7 +8,6 @@ pd.set_option('display.max_columns', None)
 from pytz import timezone
 tz = timezone('EST')
 
-
 class StockInfo(object):
     def __init__(self, symbols, rate, slow, fast):
         self.symbols = symbols

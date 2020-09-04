@@ -60,7 +60,7 @@ Each transaction will be logged like:
 ![](images/log.png)
 
 ## House keeping
-This algo uses New York local time. You might need to adjust daylight saving time based on your location.
+This algo uses New York local time(EST time zone). You might need to adjust daylight saving time based on your location.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
