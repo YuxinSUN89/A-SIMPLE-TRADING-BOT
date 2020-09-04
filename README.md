@@ -41,9 +41,9 @@ freq = '1Min'
 In StockInfo class, dataframe will be created such as :
 ![](images/dataframe.png)
 
-And signal 
+And trading signals 
 ```python
-loading = {
+signals = {
     'AA': 100,
     'AAL': 0,
     ... 
