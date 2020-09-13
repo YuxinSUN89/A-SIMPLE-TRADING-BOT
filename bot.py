@@ -1,8 +1,16 @@
 
 import pandas as pd
 import Yuxin_config
-from StockInfo import *
+#from StockInfo import *
+import alpaca_trade_api as tradeapi
+import datetime
+from datetime import timedelta
+import time
 from get_data import *
+
+import logging
+logging.basicConfig(filename='./trading.log', format='%(name)s - %(levelname)s - %(message)s')
+logging.warning('{} checking...'.format(datetime.datetime.now().strftime("%x %X")))
 
 def time_to_open(current_time):
     if current_time.weekday() <= 4:
@@ -23,15 +31,16 @@ def run_checker():
             # Checks market is open
             print('Trading in process '+ datetime.datetime.now().strftime("%x %X"))
             if datetime.datetime.now(tz).time() > datetime.time(8, 30) and datetime.datetime.now(tz).time() <= datetime.time(15, 00):
-                dataframe = StockInfo(Yuxin_config.symbols, Yuxin_config.freq, Yuxin_config.slow, Yuxin_config.fast)
-                signals = dataframe.get_signals()
+                stock_data = StockInfo(Yuxin_config.symbols, Yuxin_config.freq, Yuxin_config.slow, Yuxin_config.fast)
+                signals = stock_data.get_signals()
                 for signal in signals:
                     if signals[signal] > 0:
                         # [x.symbol for x in api.list_positions()] collect all stock tickers
                         try:
                             api.submit_order(signal, signals[signal], 'buy', 'market', 'day')
-                            logging.warning('{} bought {}  {} shares, portfolio value {} 🤑💵'.format(datetime.datetime.now(tz).strftime("%x %X"),
-                                                                                                            signal, signals[signal], api.get_account().equity))
+                            logging.warning('{} bought {}  {} shares, portfolio value {}'.format(datetime.datetime.now(tz).strftime("%x %X"),
+                                                                                                      signal, signals[signal], api.get_account().equity))
+                            print('{} 🤖 bought {} $$$ shares, portfolio value 💵💵💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal))
                         except:
                             logging.warning('{} Insufficient buying power'.format(datetime.datetime.now(tz).strftime("%x %X")))
                             print('Trading in process '+ datetime.datetime.now().strftime("%x %X") + ' Insufficient fund')
@@ -41,12 +50,14 @@ def run_checker():
                     elif signals[signal] < 0:
                         try:
                             api.submit_order(signal, -signals[signal], 'sell', 'market', 'day')
-                            logging.warning('{} sold   {} {} shares, portfolio value {} 🤖💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal, signals[signal], api.get_account().equity))
+                            logging.warning('{} sold {}  {} $$$ shares, portfolio value {}'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
+                                                                                                   signals[signal], api.get_account().equity))
+                            print('{} 🤖 sold   {} $$$ shares, portfolio value 💵💵💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,))
                         except Exception as e:
                             # print('No sell', signal, e)
                             pass
 
-                time.sleep(60)
+                time.sleep(30)
 
             else:
                 # Get time amount until open, sleep that amount
@@ -61,5 +72,7 @@ def run_checker():
 
 if __name__ == "__main__":
     run_checker()
+
+
 
 
