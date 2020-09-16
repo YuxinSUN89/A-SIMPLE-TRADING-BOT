@@ -40,7 +40,8 @@ def run_checker():
                             api.submit_order(signal, signals[signal], 'buy', 'market', 'day')
                             logging.warning('{} bought {}  {} shares, portfolio value {}'.format(datetime.datetime.now(tz).strftime("%x %X"),
                                                                                                       signal, signals[signal], api.get_account().equity))
-                            print('{} 🤖 bought {} $$$ shares, portfolio value 💵💵💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal))
+                            print('{} bought {}  {} shares, portfolio value {} 🤑💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
+                                                                                            signals[signal],api.get_account().equity))
                         except:
                             logging.warning('{} Insufficient buying power'.format(datetime.datetime.now(tz).strftime("%x %X")))
                             print('Trading in process '+ datetime.datetime.now().strftime("%x %X") + ' Insufficient fund')
@@ -52,7 +53,8 @@ def run_checker():
                             api.submit_order(signal, -signals[signal], 'sell', 'market', 'day')
                             logging.warning('{} sold {}  {} $$$ shares, portfolio value {}'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
                                                                                                    signals[signal], api.get_account().equity))
-                            print('{} 🤖 sold   {} $$$ shares, portfolio value 💵💵💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,))
+                            print('{} bought {}  {} shares, portfolio value {} 🤑💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
+                                                                                            signals[signal],api.get_account().equity))
                         except Exception as e:
                             # print('No sell', signal, e)
                             pass
