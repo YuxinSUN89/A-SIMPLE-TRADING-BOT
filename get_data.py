@@ -63,10 +63,9 @@ class StockInfo(object):
 if __name__ == '__main__':
 
     # ------ GET STOCK DATAFRAME -----#
-    stock_data = StockInfo(symbols, freq, slow, fast)
-    #dataframe = stock_data.get_minute_bar()
+    stock_data = StockInfo(symbols, freq, slow, fast, loading)
 
     #------ GET TRADING SIGNALS -----#
     signals = stock_data.get_signals()
-    #print(trading_signal)
+
 
