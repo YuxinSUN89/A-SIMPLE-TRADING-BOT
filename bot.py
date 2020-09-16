@@ -31,7 +31,7 @@ def run_checker():
             # Checks market is open
             print('Trading in process '+ datetime.datetime.now().strftime("%x %X"))
             if datetime.datetime.now(tz).time() > datetime.time(8, 30) and datetime.datetime.now(tz).time() <= datetime.time(15, 00):
-                stock_data = StockInfo(config.symbols, config.freq, config.slow, config.fast)
+                stock_data = StockInfo(config.symbols, config.freq, config.slow, config.fast, config.loading)
                 signals = stock_data.get_signals()
                 for signal in signals:
                     if signals[signal] > 0:
@@ -40,7 +40,7 @@ def run_checker():
                             api.submit_order(signal, signals[signal], 'buy', 'market', 'day')
                             logging.warning('{} bought {}  {} shares, portfolio value {}'.format(datetime.datetime.now(tz).strftime("%x %X"),
                                                                                                       signal, signals[signal], api.get_account().equity))
-                            print('{} bought {}  {} shares, portfolio value {} 🤑💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
+                            print('{} bought {}  {} shares, portfolio value {} '.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
                                                                                             signals[signal],api.get_account().equity))
                         except:
                             logging.warning('{} Insufficient buying power'.format(datetime.datetime.now(tz).strftime("%x %X")))
@@ -53,7 +53,7 @@ def run_checker():
                             api.submit_order(signal, -signals[signal], 'sell', 'market', 'day')
                             logging.warning('{} sold {}  {} $$$ shares, portfolio value {}'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
                                                                                                    signals[signal], api.get_account().equity))
-                            print('{} bought {}  {} shares, portfolio value {} 🤑💵'.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
+                            print('{} bought {}  {} shares, portfolio value {} '.format(datetime.datetime.now(tz).strftime("%x %X"), signal,
                                                                                             signals[signal],api.get_account().equity))
                         except Exception as e:
                             # print('No sell', signal, e)
