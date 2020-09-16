@@ -1,6 +1,6 @@
 
 import pandas as pd
-import Yuxin_config
+import config
 #from StockInfo import *
 import alpaca_trade_api as tradeapi
 import datetime
@@ -31,7 +31,7 @@ def run_checker():
             # Checks market is open
             print('Trading in process '+ datetime.datetime.now().strftime("%x %X"))
             if datetime.datetime.now(tz).time() > datetime.time(8, 30) and datetime.datetime.now(tz).time() <= datetime.time(15, 00):
-                stock_data = StockInfo(Yuxin_config.symbols, Yuxin_config.freq, Yuxin_config.slow, Yuxin_config.fast)
+                stock_data = StockInfo(config.symbols, config.freq, config.slow, config.fast)
                 signals = stock_data.get_signals()
                 for signal in signals:
                     if signals[signal] > 0:
