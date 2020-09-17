@@ -1,8 +1,10 @@
 Yuxin_config.py
 copy file.py
 StockInfo.py
+.log/*
 .idea/
 trading.log
 LongShort.py
 caogao.py
+
 

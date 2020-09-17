@@ -9,8 +9,8 @@ import time
 from get_data import *
 
 import logging
-logging.basicConfig(filename='./trading.log', format='%(name)s - %(levelname)s - %(message)s')
-logging.warning('{} checking...'.format(datetime.datetime.now().strftime("%x %X")))
+logging.basicConfig(filename='log/{}.log'.format(time.strftime("%Y%m%d")))
+logging.warning('{} logging started'.format(datetime.datetime.now().strftime("%x %X")))
 
 def time_to_open(current_time):
     if current_time.weekday() <= 4:
