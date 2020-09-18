@@ -61,6 +61,8 @@ Each transaction will be logged like:
 ![](images/log.png)
 
 ## House keeping
+All transactions will be kept in the log folder.
+
 This algo uses New York local time(EST time zone). You might need to adjust daylight saving time based on your location.
 
 ## Disclaimer
