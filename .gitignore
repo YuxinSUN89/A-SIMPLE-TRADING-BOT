@@ -1,7 +1,7 @@
 Yuxin_config.py
 copy file.py
 StockInfo.py
-.log/*
+.log/
 .idea/
 trading.log
 LongShort.py
