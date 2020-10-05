@@ -1,7 +1,9 @@
 import alpaca_trade_api as tradeapi
 
-API_KEY = "<Your API here>"
-SECRET_KEY = "<Your secret key here>"
+API_KEY = "PK4G3XX1Y9R5DBQ7QVDI"
+SECRET_KEY = "fdqmnZ8xImi2KhCzaUU9pZFohvORdwa8WmOMYcms"
+# API_KEY = "<Your API here>"
+# SECRET_KEY = "<Your secret key here>"
 
 #---------------- API INFO ----------------#
 api = tradeapi.REST(API_KEY,

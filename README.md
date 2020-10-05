@@ -1,5 +1,5 @@
 # ALPACA-TRADING-BOT
-This a trading bot based on Alpaca API. **It conducts a simple trading strategy that buys stocks when its fast moving average exceeds its slow moving average, and liquidates equity position when its fast moving average goes below its slow moving average. It checks the status every minute.** You need to sign up an Alpaca trading account. **Make sure to add your own indicators and signals.**
+This a simple trading bot/framework based on Alpaca API. **It conducts a simple trading strategy that buys stocks when its fast moving average exceeds its slow moving average, and liquidates equity position when its fast moving average goes below its slow moving average. It checks the status every minute.** You need to sign up an Alpaca trading account. **Make sure to add your own indicators and signals.**
 
 ## Installation
 Use the package manager pip to install.

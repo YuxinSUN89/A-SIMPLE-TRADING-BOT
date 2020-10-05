@@ -59,7 +59,7 @@ def run_checker():
                             # print('No sell', signal, e)
                             pass
 
-                time.sleep(60)
+                time.sleep(30)
 
             else:
                 # Get time amount until open, sleep that amount
