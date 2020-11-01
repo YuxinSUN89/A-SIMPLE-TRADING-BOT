@@ -18,7 +18,7 @@ def time_to_open(current_time):
     else:
         days_to_mon = 0 - current_time.weekday() + 7
         d = (current_time + timedelta(days=days_to_mon)).date()
-    next_day = datetime.datetime.combine(d, datetime.time(8, 30, tzinfo=tz))
+    next_day = datetime.datetime.combine(d, datetime.time(9, 30, tzinfo=tz))
     seconds = (next_day - current_time).total_seconds()
     return seconds
 
@@ -30,7 +30,7 @@ def run_checker():
         if datetime.datetime.now(tz).weekday() >= 0 and datetime.datetime.now(tz).weekday() <= 4:
             # Checks market is open
             print('Trading in process '+ datetime.datetime.now().strftime("%x %X"))
-            if datetime.datetime.now(tz).time() > datetime.time(8, 30) and datetime.datetime.now(tz).time() <= datetime.time(15, 00):
+            if datetime.datetime.now(tz).time() > datetime.time(9, 30) and datetime.datetime.now(tz).time() <= datetime.time(14, 00):
                 stock_data = StockInfo(config.symbols, config.freq, config.slow, config.fast, config.loading)
                 signals = stock_data.get_signals()
                 for signal in signals:

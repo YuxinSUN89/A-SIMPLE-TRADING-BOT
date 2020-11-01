@@ -11,7 +11,7 @@ api = tradeapi.REST(API_KEY,
                     'https://paper-api.alpaca.markets')
 
 #-------- Here basket of stocks ------------#
-symbols = ['AA', 'AAL', 'UAL', 'NIO', 'AMD', 'TSLA', 'BYND', 'NKLA', 'XPEV']
+symbols = ['AA', 'AAL', 'UAL', 'NIO', 'AMD', 'TSLA', 'BYND', 'NKLA', 'XPEV', 'NVDA']
 
 
 #---- NUMBER OF SHARES FOR EACH PURCHASE -----#
@@ -23,7 +23,8 @@ loading = {'AA': 50,
            'TSLA': 10,
            'BYND': 20,
            'NKLA': 30,
-           'XPEV': 30}
+           'XPEV': 30,
+           'NVDA': 50}
 
 #---- SET SLOW AND FAST MOVING AVERAGE -----#
 slow = 20

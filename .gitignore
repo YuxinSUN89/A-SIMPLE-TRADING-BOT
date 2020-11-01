@@ -5,5 +5,7 @@ StockInfo.py
 trading.log
 LongShort.py
 caogao.py
+manipulation.py
+log/*
 
 
